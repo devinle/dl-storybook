@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/css';
-import './button.css';
 
 const color = 'red';
 
@@ -19,14 +18,14 @@ const style = css(
 export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <button
+    <div
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode, style].join(' ')}
+      className={style}
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
       {label}
-    </button>
+    </div>
   );
 };
 
